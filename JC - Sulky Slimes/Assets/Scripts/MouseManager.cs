@@ -19,6 +19,9 @@ public class MouseManager : MonoBehaviour
     Quaternion originalSlimeRotation;
     public GameObject Slime;
 
+    [Header("Lives")]
+    public LivesManager livesManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,11 @@ public class MouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (livesManager.lives < 0)
+        {
+            return;
+        }
+        
         if (Input.GetMouseButtonDown(0))
         {
             clickStartLocation = Input.mousePosition;
@@ -59,6 +67,7 @@ public class MouseManager : MonoBehaviour
             Slime.transform.position = originalSlimePosition;
             Slime.transform.rotation = originalSlimeRotation;
             slimeRigidbody.isKinematic = true;
+            livesManager.RemoveLife();
         }
     }
 }

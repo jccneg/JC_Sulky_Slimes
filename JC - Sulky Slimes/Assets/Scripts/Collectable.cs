@@ -34,4 +34,12 @@ public class Collectable : MonoBehaviour
 
         transform.position = new Vector3 (transform.position.x + speed * direction * Time.deltaTime, transform.position.y, transform.position.z);
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Slime")
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }
