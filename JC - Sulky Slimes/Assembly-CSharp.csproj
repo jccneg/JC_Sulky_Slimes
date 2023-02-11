@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Collectable.cs" />
     <Compile Include="Assets\Scripts\MouseManager.cs" />
-    <Compile Include="Assets\LivesManager.cs" />
+    <Compile Include="Assets\Scripts\LivesManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Hand Painted Seamless Wood Texture\Documentation\Documentation.txt" />
